@@ -2,6 +2,16 @@ import type { Metadata } from "next";
 
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/ui/status-badge";
+import {
+  DATA_SOURCE,
+  getTours,
+  getUpcomingDepartures,
+} from "@/lib/data";
+import {
+  formatDateRange,
+  formatDuration,
+  formatPriceFrom,
+} from "@/lib/format";
 
 /**
  * Internal reference page for the design system (PHASE 2).
@@ -76,7 +86,15 @@ function Section({
   );
 }
 
-export default function StyleguidePage() {
+export default async function StyleguidePage() {
+  // Read through the same façade the real pages will use, so this page fails
+  // loudly if the data layer breaks rather than silently going stale.
+  const [tours, departures] = await Promise.all([
+    getTours(),
+    getUpcomingDepartures(4),
+  ]);
+  const tourTitles = new Map(tours.map((t) => [t.slug, t.title]));
+
   return (
     <main className="mx-auto max-w-5xl px-6 py-16">
       <p className="text-overline uppercase text-gold-700">Internal reference</p>
@@ -256,6 +274,69 @@ export default function StyleguidePage() {
             </p>
           </div>
         </div>
+      </Section>
+
+      <Section
+        title="Data layer"
+        note="Rendered live through lib/data, the same façade every real page will use. Swapping to Supabase in Phase 8 changes that one module and nothing here."
+      >
+        {DATA_SOURCE === "mock" ? (
+          <p
+            role="status"
+            className="mb-6 rounded-sm border border-gold-600/40 bg-gold-100 px-4 py-3 text-sm text-gold-800"
+          >
+            <strong className="font-semibold">Placeholder content.</strong> These
+            departures are demo data. No date, price or seat count below has been
+            confirmed, and nothing is marked as filling or selling out.
+          </p>
+        ) : null}
+
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th scope="col" className="py-2 pr-4 font-medium">Trip</th>
+                <th scope="col" className="py-2 pr-4 font-medium">Dates</th>
+                <th scope="col" className="py-2 pr-4 font-medium">Duration</th>
+                <th scope="col" className="py-2 pr-4 font-medium">Price</th>
+                <th scope="col" className="py-2 font-medium">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {departures.map((d) => {
+                const tour = tours.find((t) => t.slug === d.tourSlug);
+                const price = formatPriceFrom(d.price ?? tour?.priceFrom ?? null);
+                return (
+                  <tr key={d.id} className="border-b border-border/60">
+                    <td className="py-3 pr-4">
+                      {tourTitles.get(d.tourSlug) ?? d.tourSlug}
+                    </td>
+                    <td className="py-3 pr-4 text-muted-foreground">
+                      {formatDateRange(d.startDate, d.endDate)}
+                    </td>
+                    <td className="py-3 pr-4 text-muted-foreground">
+                      {tour
+                        ? formatDuration(tour.durationNights, tour.durationDays)
+                        : "—"}
+                    </td>
+                    <td className="py-3 pr-4 text-muted-foreground">
+                      {price ?? "On enquiry"}
+                    </td>
+                    <td className="py-3">
+                      <StatusBadge status={d.status} />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="mt-4 text-sm text-muted-foreground">
+          Note the price column. When no price is published the type is{" "}
+          <code className="font-mono text-xs">null</code>, and the UI is forced
+          to say &ldquo;On enquiry&rdquo; rather than render a zero.
+        </p>
       </Section>
     </main>
   );

@@ -2,19 +2,7 @@ import { Ban, CircleDot, Clock, Flame } from "lucide-react";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
-
-/**
- * Availability of a group departure.
- *
- * These values are set deliberately in the database, never derived. In
- * particular "filling_fast" must reflect real remaining seats - the brief
- * rules out manufactured urgency.
- */
-export type DepartureStatus =
-  | "open"
-  | "filling_fast"
-  | "sold_out"
-  | "coming_soon";
+import type { DepartureStatus } from "@/lib/types";
 
 const statusBadge = cva(
   "inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 text-xs font-medium tracking-wide",
