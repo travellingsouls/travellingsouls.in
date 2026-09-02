@@ -40,15 +40,10 @@ export const siteConfig = {
       country: "IN",
     },
 
-    /** TODO(content): business phone number, from the Google Business Profile. */
-    phone: null as string | null,
+    /** E.164. Display formatting is handled by formatPhone(). */
+    phone: "+918976453901" as string | null,
 
-    /**
-     * TODO(content): confirm the public-facing enquiry address.
-     * tyagi.ashutosh012@gmail.com was supplied but has not been confirmed as
-     * the address to publish, so it is deliberately not shown on the site yet.
-     */
-    email: null as string | null,
+    email: "sales@travellingsouls.in" as string | null,
 
     whatsappNumber,
 
@@ -64,11 +59,11 @@ export const siteConfig = {
   },
 
   /**
-   * TODO(content): real handles only. Never link to a profile that does not
-   * exist - a dead social icon costs more trust than a missing one.
+   * Real handles only. Never link to a profile that does not exist - a dead
+   * social icon costs more trust than a missing one.
    */
   social: {
-    instagram: null as string | null,
+    instagram: "https://www.instagram.com/travellingsoul_in" as string | null,
     facebook: null as string | null,
     youtube: null as string | null,
   },

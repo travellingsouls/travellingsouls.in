@@ -110,3 +110,16 @@ export function formatSeatsRemaining(seats: number | null): string | null {
   if (seats <= 0) return "No seats remaining";
   return `${seats} ${seats === 1 ? "seat" : "seats"} remaining`;
 }
+
+/**
+ * Formats an E.164 number for display: "+918976453901" -> "+91 89764 53901".
+ *
+ * Indian mobile numbers are conventionally grouped 5+5 after the country code.
+ * Anything that does not match that shape is returned unchanged rather than
+ * mangled - a phone number shown wrongly is a phone number that does not work.
+ */
+export function formatPhone(e164: string | null): string | null {
+  if (!e164) return null;
+  const match = /^\+91(\d{5})(\d{5})$/.exec(e164.replace(/[\s-]/g, ""));
+  return match ? `+91 ${match[1]} ${match[2]}` : e164;
+}
