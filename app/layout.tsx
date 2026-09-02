@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
-// TODO(phase-2): replace Geist with the editorial heading / body pairing
-// chosen for the design system.
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+/**
+ * Fraunces is the editorial voice: headings, pull quotes, the hero. Its
+ * optical-size axis keeps large display text tight without a second face.
+ * Inter does all the reading work.
+ *
+ * Both variables are attached to <html> rather than <body> because the theme
+ * tokens in globals.css reference them from :root, which resolves against the
+ * root element.
+ */
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://travellingsouls.in";
@@ -36,12 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-IN">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en-IN" className={`${inter.variable} ${fraunces.variable}`}>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

@@ -1,16 +1,26 @@
+import Link from "next/link";
+
 /**
  * Temporary holding page.
- * Replaced by the real homepage in PHASE 4. Contains no business claims,
+ * Replaced by the real homepage in PHASE 4. Carries no business claims,
  * prices, dates or testimonials by design.
  */
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4 px-6 text-center">
-      <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-        TravellingSouls
-      </h1>
-      <p className="max-w-prose text-sm text-neutral-500">
-        Foundation in place. Design system and homepage to follow.
+    <main className="mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center px-6 text-center">
+      <p className="text-overline uppercase text-gold-700">Rohtak, Haryana</p>
+      <h1 className="mt-4 text-display">TravellingSouls</h1>
+      <p className="mt-5 text-lead text-muted-foreground">
+        Curated journeys across India, led by people who know the road.
+      </p>
+      <p className="mt-10 text-sm text-muted-foreground">
+        Site in development.{" "}
+        <Link
+          href="/styleguide"
+          className="text-gold-700 underline underline-offset-4"
+        >
+          Design system
+        </Link>
       </p>
     </main>
   );
