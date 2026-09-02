@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { siteConfig } from "@/lib/config/site";
 import "./globals.css";
 
 /**
@@ -26,10 +27,11 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://travellingsouls.in";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  // Resolved in siteConfig, which validates the environment variable rather
+  // than trusting it. Reading process.env directly here is what broke the
+  // build when the variable was present but empty.
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "TravellingSouls — Curated journeys across India",
     template: "%s | TravellingSouls",

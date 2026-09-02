@@ -9,7 +9,36 @@
  * placeholder that looks real to a visitor.
  */
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://travellingsouls.in";
+const DEFAULT_SITE_URL = "https://travellingsouls.in";
+
+/**
+ * Resolves the canonical origin from the environment.
+ *
+ * `??` is not enough here. It falls back only on null/undefined, so an env var
+ * that exists but is EMPTY - which is exactly what a hosting dashboard
+ * produces when someone adds the key and leaves the value blank - passes an
+ * empty string straight through. `new URL("")` then throws ERR_INVALID_URL and
+ * takes the whole production build down while collecting page data.
+ *
+ * So: trim, treat empty as absent, accept a bare domain by assuming https,
+ * and fall back rather than throw if it still will not parse. A misconfigured
+ * variable should cost a wrong canonical URL, never a failed deploy.
+ */
+function resolveSiteUrl(): string {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (!raw) return DEFAULT_SITE_URL;
+
+  const candidate = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+
+  try {
+    // Normalise and drop any trailing slash, since paths are appended to this.
+    return new URL(candidate).origin;
+  } catch {
+    return DEFAULT_SITE_URL;
+  }
+}
+
+const siteUrl = resolveSiteUrl();
 
 /**
  * International format, digits only, no "+" and no spaces (e.g. 919812345678).
