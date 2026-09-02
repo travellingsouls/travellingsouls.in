@@ -1,0 +1,10 @@
+# Normalise line endings so Windows checkouts don't produce CRLF diff noise
+# against the Linux build environment on Vercel.
+* text=auto eol=lf
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.woff2 binary
