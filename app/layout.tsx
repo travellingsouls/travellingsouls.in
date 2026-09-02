@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   },
   description:
     "Curated group tours and customized journeys across North India, led by experienced trip captains.",
+  // TODO(launch): remove when real content is live and travellingsouls.in is
+  // connected. Until then the placeholder must not be indexed, and the
+  // *.vercel.app host must never compete with the real domain in search.
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({
