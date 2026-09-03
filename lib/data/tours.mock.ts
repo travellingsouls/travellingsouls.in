@@ -14,6 +14,10 @@ import type { Tour } from "@/lib/types";
  * Structural facts (duration, route, start and end points) follow the example
  * in the project brief and are marked TODO(content) for confirmation.
  *
+ * Images are the destination photographs, standing in until there are
+ * photographs from actual departures. They are labelled as destination
+ * imagery, not presented as pictures of this trip.
+ *
  * Nothing in this file may go to production unreviewed.
  */
 export const toursMock: Tour[] = [
@@ -33,7 +37,13 @@ export const toursMock: Tour[] = [
 
     priceFrom: null,
 
-    heroImage: null,
+    heroImage: {
+      src: "/images/destinations/spiti.jpg",
+      alt: "The bare, high-altitude road through the Spiti valley below rock ridges",
+      width: 1920,
+      height: 1280,
+      credit: "Timothy Gonsalves / Wikimedia Commons (CC BY-SA 4.0)",
+    },
     images: [],
 
     shortDescription:
@@ -68,7 +78,13 @@ export const toursMock: Tour[] = [
 
     priceFrom: null,
 
-    heroImage: null,
+    heroImage: {
+      src: "/images/destinations/ladakh.jpg",
+      alt: "A stream running down from bare mountains in Ladakh",
+      width: 1920,
+      height: 1440,
+      credit: "Ssandrathomas / Wikimedia Commons (CC BY-SA 4.0)",
+    },
     images: [],
 
     shortDescription:
@@ -102,7 +118,13 @@ export const toursMock: Tour[] = [
 
     priceFrom: null,
 
-    heroImage: null,
+    heroImage: {
+      src: "/images/destinations/uttarakhand.jpg",
+      alt: "Alpine meadow in flower below peaks in the Valley of Flowers, Uttarakhand",
+      width: 1920,
+      height: 1080,
+      credit: "Anshusk / Wikimedia Commons (CC BY-SA 4.0)",
+    },
     images: [],
 
     shortDescription:

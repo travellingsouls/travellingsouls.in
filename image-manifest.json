@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "spiti",
+    "ok": true,
+    "alt": "The bare, high-altitude landscape of the Spiti valley under a clear sky",
+    "credit": "Timothy Gonsalves / Wikimedia Commons (CC BY-SA 4.0)",
+    "source": "https://commons.wikimedia.org/wiki/File:NH505_Spiti_Kaza_Losar_Jun18_D72_7800.jpg",
+    "bytes": 598472
+  },
+  {
+    "slug": "ladakh",
+    "ok": true,
+    "alt": "Deep blue water of Pangong Tso ringed by bare Ladakh mountains",
+    "credit": "https://www.flickr.com/people/46888841@N00 / Wikimedia Commons (CC BY 2.5)",
+    "source": "https://commons.wikimedia.org/wiki/File:Pangong_Tso_lake_banner.jpg",
+    "bytes": 102944
+  },
+  {
+    "slug": "himachal",
+    "ok": true,
+    "alt": "Forested ridges and river valley in Himachal Pradesh",
+    "credit": "Timothy Gonsalves / Wikimedia Commons (CC BY-SA 4.0)",
+    "source": "https://commons.wikimedia.org/wiki/File:Pin_Valley_Spiti_Himachal_Jun18_D72_7092.jpg",
+    "bytes": 542785
+  },
+  {
+    "slug": "uttarakhand",
+    "ok": true,
+    "alt": "Alpine meadow in flower below snow peaks in Uttarakhand",
+    "credit": "Anshusk / Wikimedia Commons (CC BY-SA 4.0)",
+    "source": "https://commons.wikimedia.org/wiki/File:Valley_of_Flowers,Uttarakhand_05.jpg",
+    "bytes": 409118
+  },
+  {
+    "slug": "rajasthan",
+    "ok": true,
+    "alt": "Golden sandstone walls of a fort rising above a Rajasthani city",
+    "credit": "Gérard Janot / Wikimedia Commons (CC BY-SA 3.0)",
+    "source": "https://commons.wikimedia.org/wiki/File:Jaisalmer_forteresse.jpg",
+    "bytes": 415493
+  },
+  {
+    "slug": "kashmir",
+    "ok": true,
+    "alt": "Wooden shikara boats on Dal Lake with mountains behind",
+    "credit": "Utsav Sabharwal Photopgrahy / Wikimedia Commons (CC BY-SA 3.0)",
+    "source": "https://commons.wikimedia.org/wiki/File:Shikara,_Dal_Lake.jpg",
+    "bytes": 418075
+  },
+  {
+    "slug": "goa",
+    "ok": true,
+    "alt": "Palm-backed curve of sand on the Goan coast",
+    "credit": "SINHA / Wikimedia Commons (CC BY-SA 3.0)",
+    "source": "https://commons.wikimedia.org/wiki/File:Goa.in_Palolem_Beach_-_panoramio.jpg",
+    "bytes": 778805
+  }
+]

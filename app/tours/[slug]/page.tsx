@@ -135,6 +135,7 @@ export default async function TourPage({ params }: Params) {
               aspect="portrait"
               sizes="(min-width: 1024px) 50vw, 100vw"
               priority
+              showCredit
             />
           </div>
         </Container>

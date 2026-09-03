@@ -21,12 +21,21 @@ export function ImageFrame({
   className,
   sizes = "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw",
   priority = false,
+  showCredit = false,
 }: {
   image: ImageRef | null;
   aspect?: "landscape" | "portrait" | "square" | "wide";
   className?: string;
   sizes?: string;
   priority?: boolean;
+  /**
+   * Overlays the photographer credit. Enabled on large, single images where
+   * the text is legible. Small grid cards leave it off and are covered by the
+   * /credits page instead, which is accepted practice for CC attribution on
+   * the web - the licence asks for attribution reasonable to the medium, not
+   * a caption on every thumbnail.
+   */
+  showCredit?: boolean;
 }) {
   const aspectClass = {
     landscape: "aspect-[4/3]",
@@ -44,14 +53,21 @@ export function ImageFrame({
       )}
     >
       {image ? (
-        <Image
-          src={image.src}
-          alt={image.alt}
-          fill
-          sizes={sizes}
-          priority={priority}
-          className="object-cover"
-        />
+        <>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes={sizes}
+            priority={priority}
+            className="object-cover"
+          />
+          {showCredit && image.credit ? (
+            <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/75 to-transparent px-3 pb-1.5 pt-6 text-[11px] leading-tight text-sand-50/80">
+              {image.credit}
+            </span>
+          ) : null}
+        </>
       ) : (
         <RidgelinePlaceholder />
       )}

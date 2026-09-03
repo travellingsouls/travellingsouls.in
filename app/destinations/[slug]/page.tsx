@@ -102,6 +102,7 @@ export default async function DestinationPage({ params }: Params) {
               aspect="portrait"
               sizes="(min-width: 1024px) 50vw, 100vw"
               priority
+              showCredit
             />
           </div>
         </Container>

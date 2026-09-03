@@ -49,6 +49,7 @@ export const footerLegal: NavItem[] = [
   { label: "Privacy Policy", href: "/privacy-policy", status: "planned" },
   { label: "Cancellation Policy", href: "/cancellation-policy", status: "planned" },
   { label: "Booking Policy", href: "/booking-policy", status: "planned" },
+  { label: "Photo Credits", href: "/credits", status: "live" },
 ];
 
 /** Filters a nav list down to routes that actually exist. */
