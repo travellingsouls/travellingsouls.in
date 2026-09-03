@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { siteConfig } from "@/lib/config/site";
@@ -81,6 +82,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <GoogleAnalytics />
       </body>
     </html>
   );
