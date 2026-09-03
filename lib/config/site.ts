@@ -9,7 +9,12 @@
  * placeholder that looks real to a visitor.
  */
 
-const DEFAULT_SITE_URL = "https://travellingsouls.in";
+/**
+ * The www host is primary: Vercel 308-redirects the apex to it. Canonicals,
+ * the sitemap and Open Graph URLs must all name the host that actually serves
+ * a 200, or every canonical points at a redirect.
+ */
+const DEFAULT_SITE_URL = "https://www.travellingsouls.in";
 
 /**
  * Resolves the canonical origin from the environment.

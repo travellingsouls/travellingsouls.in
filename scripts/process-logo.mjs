@@ -21,3 +21,11 @@ await sharp(SOURCE)
 
 const meta = await sharp("app/icon.png").metadata();
 console.log(`favicon: app/icon.png ${meta.width}x${meta.height}`);
+
+// iOS home-screen icon. Without it, "Add to Home Screen" shows a blank tile,
+// which matters because traffic is expected to arrive from Instagram.
+await sharp(SOURCE)
+  .resize(180, 180, { fit: "cover" })
+  .png({ compressionLevel: 9 })
+  .toFile("app/apple-icon.png");
+console.log("apple:   app/apple-icon.png 180x180");
