@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 
@@ -60,13 +61,16 @@ export function Footer() {
       <Container>
         <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <p className="font-display text-xl font-semibold tracking-tight">
-              {siteConfig.name}
-              <span aria-hidden="true" className="text-gold-400">
-                .
-              </span>
-            </p>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            {/* The full lockup goes here rather than in the header: its
+                tagline is white artwork, which only reads on a dark ground. */}
+            <Image
+              src={siteConfig.logo.src}
+              alt={siteConfig.logo.alt}
+              width={648}
+              height={498}
+              className="h-auto w-48"
+            />
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
               {siteConfig.description}
             </p>
 
@@ -129,12 +133,23 @@ export function Footer() {
                 <address className="not-italic">{formattedAddress()}</address>
               </li>
             </ul>
+
+            {/* A GSTIN is checkable on the government portal, so publishing it
+                is a verifiable trust signal rather than a claim. */}
+            {business.gstin ? (
+              <p className="mt-4 text-xs text-muted-foreground">
+                GSTIN{" "}
+                <span className="font-mono tracking-tight">
+                  {business.gstin}
+                </span>
+              </p>
+            ) : null}
           </div>
         </div>
 
         <div className="flex flex-col items-start justify-between gap-4 border-t border-border py-8 sm:flex-row sm:items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
+            &copy; {new Date().getFullYear()} {siteConfig.legalName}. All rights
             reserved.
           </p>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -54,13 +55,24 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-border bg-sand-50/85 backdrop-blur-md">
       <Container>
         <div className="flex h-16 items-center justify-between gap-4 sm:h-20">
-          <Link
-            href="/"
-            className="font-display text-lg font-semibold tracking-tight sm:text-xl"
-          >
-            {siteConfig.name}
-            <span aria-hidden="true" className="text-gold-600">
-              .
+          {/* The compass mark plus a set wordmark, rather than the full logo
+              lockup. The lockup's "where stories begin" tagline is white
+              artwork, which would be invisible against this light header. */}
+          <Link href="/" className="flex items-center gap-2.5">
+            <Image
+              src={siteConfig.logo.mark}
+              alt=""
+              aria-hidden="true"
+              width={512}
+              height={512}
+              priority
+              className="size-9 shrink-0 sm:size-10"
+            />
+            <span className="font-display text-lg font-semibold tracking-tight sm:text-xl">
+              {siteConfig.name}
+              <span aria-hidden="true" className="text-gold-600">
+                .
+              </span>
             </span>
           </Link>
 

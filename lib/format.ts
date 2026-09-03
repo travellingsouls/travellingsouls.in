@@ -112,7 +112,7 @@ export function formatSeatsRemaining(seats: number | null): string | null {
 }
 
 /**
- * Formats an E.164 number for display: "+918976453901" -> "+91 89764 53901".
+ * Formats an E.164 number for display: "+919653582634" -> "+91 96535 82634".
  *
  * Indian mobile numbers are conventionally grouped 5+5 after the country code.
  * Anything that does not match that shape is returned unchanged rather than

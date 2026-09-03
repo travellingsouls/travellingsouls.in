@@ -48,11 +48,25 @@ const siteUrl = resolveSiteUrl();
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim() || null;
 
 export const siteConfig = {
+  /** Brand name, set as one word to match the logo wordmark and the domain. */
   name: "TravellingSouls",
+  /**
+   * Registered name, which carries the space. Used for structured data and
+   * anywhere the legal entity is named rather than the brand.
+   */
+  legalName: "Travelling Souls",
   url: siteUrl,
-  tagline: "Journeys beyond destinations",
+  /** From the logo lockup. */
+  tagline: "Where stories begin",
   description:
-    "Curated group tours and customized journeys across North India, led by experienced trip captains.",
+    "Curated group tours and customized journeys across North India and Goa, led personally by an experienced trip captain.",
+
+  logo: {
+    src: "/logo/travellingsouls-logo.png",
+    alt: "TravellingSouls - where stories begin",
+    /** The gold compass mark alone, for tight spaces and the favicon. */
+    mark: "/logo/travellingsouls-mark.png",
+  },
 
   business: {
     /**
@@ -70,19 +84,26 @@ export const siteConfig = {
     },
 
     /** E.164. Display formatting is handled by formatPhone(). */
-    phone: "+918976453901" as string | null,
+    phone: "+919653582634" as string | null,
 
-    email: "sales@travellingsouls.in" as string | null,
+    email: "travellingsouls1305@gmail.com" as string | null,
 
     whatsappNumber,
 
     /**
-     * Short link supplied 2026-09-02. Used for the `sameAs` field in
-     * structured data and the "find us on Google" link.
+     * GST identification number. Displaying it is a genuine trust signal for
+     * an Indian travel business - it is verifiable on the GST portal, which
+     * is more than most freelance operators can offer.
+     */
+    gstin: "06GALPS2060H1ZI" as string | null,
+
+    /**
+     * Used for the `sameAs` field in structured data and the "find us on
+     * Google" link.
      * TODO(content): replace with the canonical Google Maps place URL, which
      * is more stable than a share link.
      */
-    googleBusinessProfile: "https://share.google/OCWhMhGiNe3DYI48I" as
+    googleBusinessProfile: "https://share.google/8qejYvyIYZ9y6EfPv" as
       | string
       | null,
   },
@@ -92,7 +113,7 @@ export const siteConfig = {
    * social icon costs more trust than a missing one.
    */
   social: {
-    instagram: "https://www.instagram.com/travellingsoul_in" as string | null,
+    instagram: "https://www.instagram.com/travellingsoul.in" as string | null,
     facebook: null as string | null,
     youtube: null as string | null,
   },
