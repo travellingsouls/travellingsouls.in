@@ -52,28 +52,22 @@ export function Navbar() {
     pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-sand-50/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border bg-black/85 backdrop-blur-md">
       <Container>
         <div className="flex h-16 items-center justify-between gap-4 sm:h-20">
-          {/* The compass mark plus a set wordmark, rather than the full logo
-              lockup. The lockup's "where stories begin" tagline is white
-              artwork, which would be invisible against this light header. */}
-          <Link href="/" className="flex items-center gap-2.5">
+          {/* The logo exactly as supplied. Its black background is invisible
+              because the header is pure black. The file carries generous
+              padding of its own, so it is set larger than the visible artwork
+              suggests in order to read at header size. */}
+          <Link href="/" className="-my-2 flex items-center">
             <Image
-              src={siteConfig.logo.mark}
-              alt=""
-              aria-hidden="true"
-              width={512}
-              height={512}
+              src={siteConfig.logo.src}
+              alt={siteConfig.name}
+              width={siteConfig.logo.width}
+              height={siteConfig.logo.height}
               priority
-              className="size-9 shrink-0 sm:size-10"
+              className="h-16 w-auto sm:h-20"
             />
-            <span className="font-display text-lg font-semibold tracking-tight sm:text-xl">
-              {siteConfig.name}
-              <span aria-hidden="true" className="text-gold-600">
-                .
-              </span>
-            </span>
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:block">
@@ -125,7 +119,7 @@ export function Navbar() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="border-t border-border bg-sand-50 lg:hidden"
+        className="border-t border-border bg-black lg:hidden"
       >
         <Container>
           <nav aria-label="Mobile" className="py-4">

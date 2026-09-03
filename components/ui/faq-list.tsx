@@ -20,7 +20,7 @@ export function FaqList({ faqs }: { faqs: Faq[] }) {
             {faq.question}
             <Plus
               aria-hidden="true"
-              className="mt-0.5 size-5 shrink-0 text-gold-700 transition-transform group-open:rotate-45"
+              className="mt-0.5 size-5 shrink-0 text-gold-400 transition-transform group-open:rotate-45"
             />
           </summary>
           <p className="mt-3 pr-9 leading-relaxed text-muted-foreground">

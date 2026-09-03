@@ -71,7 +71,7 @@ export default async function DestinationPage({ params }: Params) {
 
           <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
-              <p className="text-overline uppercase text-gold-700">
+              <p className="text-overline uppercase text-gold-400">
                 {destination.region}
               </p>
               <h1 className="mt-3 text-h1">{destination.name}</h1>
@@ -87,7 +87,7 @@ export default async function DestinationPage({ params }: Params) {
               <div className="mt-8 flex gap-3 rounded-sm border border-border bg-card p-5">
                 <CalendarRange
                   aria-hidden="true"
-                  className="mt-0.5 size-5 shrink-0 text-gold-700"
+                  className="mt-0.5 size-5 shrink-0 text-gold-400"
                 />
                 <div>
                   <h2 className="text-sm font-medium">When to go</h2>
@@ -109,7 +109,7 @@ export default async function DestinationPage({ params }: Params) {
         </Container>
       </section>
 
-      <section className="bg-sand-100 py-20 sm:py-24">
+      <section className="bg-ink-900 py-20 sm:py-24">
         <Container>
           <SectionHeading
             overline="Trips"

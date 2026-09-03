@@ -55,10 +55,24 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
 
-  // TODO(launch): remove when real content is live and travellingsouls.in is
-  // connected. Until then the placeholder must not be indexed, and the
-  // *.vercel.app host must never compete with the real domain in search.
-  robots: { index: false, follow: false },
+  /**
+   * Indexing is ON now that the domain is live and a Search Console property
+   * exists.
+   *
+   * It is enabled site-wide rather than page-by-page because the destination
+   * pages carry genuine, unique writing and the contact page carries real
+   * business details - those deserve to be found. The thin pages opt OUT
+   * individually instead: /styleguide and each tour detail page set their own
+   * noindex until real itineraries and prices exist.
+   *
+   * Every page also declares a canonical on travellingsouls.in, which stops
+   * the *.vercel.app host competing with the real domain.
+   */
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
 };
 
 export default function RootLayout({

@@ -17,7 +17,7 @@ import { generalEnquiryMessage } from "@/lib/whatsapp";
  */
 export function TripCaptainTeaser() {
   return (
-    <section className="bg-sand-100 py-20 sm:py-24">
+    <section className="bg-ink-900 py-20 sm:py-24">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <ImageFrame
@@ -28,7 +28,7 @@ export function TripCaptainTeaser() {
           />
 
           <div>
-            <p className="text-overline uppercase text-gold-700">
+            <p className="text-overline uppercase text-gold-400">
               Your trip captain
             </p>
             <h2 className="mt-3 text-h1">

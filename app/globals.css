@@ -11,14 +11,17 @@
    gold  - warm, muted. An ACCENT only; never a surface colour.
    sand  - warm off-whites. The page ground, so the site reads warm not clinical.
 
-   Contrast (WCAG AA):
-     gold-700 on sand-50 .... 5.5:1  -> safe for body-size gold text on light
-     gold-600 on sand-50 .... 3.6:1  -> LARGE text / borders / icons only
-     gold-400 on ink-900 .... 9.5:1  -> safe for gold text on dark sections
-   Use gold-700 when gold text sits on a light ground, gold-400 on dark.
+   The site ground is BLACK, so these are the pairings that matter:
+     sand-50  on black ..... 19.6:1 -> body text
+     gold-400 on black ..... 10.3:1 -> gold text at any size
+     gold-500 on black .....  7.9:1 -> gold text at any size
+     ink-300  on black .....  7.4:1 -> muted/secondary text
+     gold-700 on black .....  3.4:1 -> FAILS for body text. Do not use gold-700
+                                       on the dark ground; it was the correct
+                                       choice only while the site was light.
    =========================================================================== */
 @theme {
-  --color-ink-950: #05090f;
+  --color-ink-950: #000000;
   --color-ink-900: #0a1220;
   --color-ink-800: #111c2e;
   --color-ink-700: #1a283d;
@@ -112,86 +115,67 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/**
+ * The site is dark by default, taking its cue from the logo: gold artwork on
+ * pure black.
+ *
+ * The page ground is #000 rather than a near-black, because the supplied logo
+ * is a JPEG on solid black. Anything even slightly off-black would show the
+ * logo's square edge against the page. Depth comes from lifting SURFACES
+ * (cards, bands) above the black rather than from tinting the ground.
+ */
 :root {
   /* Restrained radius. The brief rules out heavily rounded cards, and a small
      radius reads more editorial than a pill. */
   --radius: 0.25rem;
 
-  --background: var(--color-sand-50);
-  --foreground: var(--color-ink-900);
-
-  --card: #ffffff;
-  --card-foreground: var(--color-ink-900);
-  --popover: #ffffff;
-  --popover-foreground: var(--color-ink-900);
-
-  --primary: var(--color-ink-900);
-  --primary-foreground: var(--color-sand-50);
-
-  --secondary: var(--color-sand-100);
-  --secondary-foreground: var(--color-ink-800);
-
-  --muted: var(--color-sand-100);
-  --muted-foreground: var(--color-ink-500);
-
-  --accent: var(--color-gold-500);
-  --accent-foreground: var(--color-ink-950);
-
-  --destructive: #a4231c;
-
-  --border: var(--color-sand-200);
-  --input: var(--color-sand-300);
-  --ring: var(--color-gold-600);
-
-  --sidebar: var(--color-sand-100);
-  --sidebar-foreground: var(--color-ink-900);
-  --sidebar-primary: var(--color-ink-900);
-  --sidebar-primary-foreground: var(--color-sand-50);
-  --sidebar-accent: var(--color-sand-200);
-  --sidebar-accent-foreground: var(--color-ink-900);
-  --sidebar-border: var(--color-sand-200);
-  --sidebar-ring: var(--color-gold-600);
-}
-
-/* Not a user-facing theme toggle. Applied to individual SECTIONS - hero,
-   footer, feature bands - so a dark block on a light page inherits the right
-   token values instead of hard-coding colours per component:
-       <section className="dark bg-background text-foreground"> */
-.dark {
-  --background: var(--color-ink-900);
+  --background: #000000;
   --foreground: var(--color-sand-50);
 
-  --card: var(--color-ink-800);
+  --card: var(--color-ink-900);
   --card-foreground: var(--color-sand-50);
-  --popover: var(--color-ink-800);
+  --popover: var(--color-ink-900);
   --popover-foreground: var(--color-sand-50);
 
+  /* Gold is the primary action colour now that the ground is black. */
   --primary: var(--color-gold-500);
-  --primary-foreground: var(--color-ink-950);
+  --primary-foreground: #000000;
 
   --secondary: var(--color-ink-800);
   --secondary-foreground: var(--color-sand-50);
 
-  --muted: var(--color-ink-800);
+  --muted: var(--color-ink-900);
   --muted-foreground: var(--color-ink-300);
 
   --accent: var(--color-gold-400);
-  --accent-foreground: var(--color-ink-950);
+  --accent-foreground: #000000;
 
+  /* Lifted off pure red so it does not vibrate against the black. */
   --destructive: #e06b63;
 
-  --border: color-mix(in oklab, var(--color-sand-50) 14%, transparent);
+  --border: color-mix(in oklab, var(--color-sand-50) 13%, transparent);
   --input: color-mix(in oklab, var(--color-sand-50) 22%, transparent);
   --ring: var(--color-gold-400);
 
   --sidebar: var(--color-ink-900);
   --sidebar-foreground: var(--color-sand-50);
   --sidebar-primary: var(--color-gold-500);
-  --sidebar-primary-foreground: var(--color-ink-950);
+  --sidebar-primary-foreground: #000000;
   --sidebar-accent: var(--color-ink-800);
   --sidebar-accent-foreground: var(--color-sand-50);
-  --sidebar-border: color-mix(in oklab, var(--color-sand-50) 14%, transparent);
+  --sidebar-border: color-mix(in oklab, var(--color-sand-50) 13%, transparent);
   --sidebar-ring: var(--color-gold-400);
+}
+
+/**
+ * Retained as a no-op so the `dark` class already on the hero, footer and CTA
+ * sections keeps working. The whole site is dark now, so these sections need
+ * no override - but leaving the class harmless avoids touching every component
+ * to remove it, and keeps the option of a light section later.
+ */
+.dark {
+  --background: #000000;
+  --foreground: var(--color-sand-50);
 }
 
 @layer base {

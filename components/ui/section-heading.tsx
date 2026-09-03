@@ -33,7 +33,7 @@ export function SectionHeading({
       )}
     >
       {overline ? (
-        <p className="text-overline uppercase text-gold-700 dark:text-gold-400">
+        <p className="text-overline uppercase text-gold-400">
           {overline}
         </p>
       ) : null}

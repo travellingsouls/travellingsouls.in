@@ -53,7 +53,7 @@ export function DepartureCard({
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex flex-wrap items-center gap-3">
-          <p className="text-overline uppercase text-gold-700">
+          <p className="text-overline uppercase text-gold-400">
             {tour.routeSummary.split(" - ")[0]}
           </p>
           <StatusBadge status={departure.status} />

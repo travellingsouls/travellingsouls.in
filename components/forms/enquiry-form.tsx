@@ -118,7 +118,7 @@ export function EnquiryForm({
         role="status"
       >
         <CheckCircle2
-          className="mx-auto size-8 text-gold-700"
+          className="mx-auto size-8 text-gold-400"
           aria-hidden="true"
         />
         <h3 className="mt-4 text-h3">Enquiry received</h3>

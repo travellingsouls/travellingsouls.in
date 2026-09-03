@@ -37,6 +37,14 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: tour.title,
     description: tour.shortDescription,
     alternates: { canonical: `/tours/${tour.slug}` },
+    /**
+     * TODO(content): remove this once the itinerary, inclusions, price and
+     * departure dates are real. Until then the page has almost nothing on it,
+     * and letting Google index a thin commercial page earns a
+     * "crawled - currently not indexed" verdict that is slower to recover from
+     * than simply waiting. follow stays true so the links are still crawled.
+     */
+    robots: { index: false, follow: true },
     openGraph: {
       title: `${tour.title} | TravellingSouls`,
       description: tour.shortDescription,
@@ -79,10 +87,10 @@ export default async function TourPage({ params }: Params) {
           <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               {destination ? (
-                <p className="text-overline uppercase text-gold-700">
+                <p className="text-overline uppercase text-gold-400">
                   <Link
                     href={`/destinations/${destination.slug}`}
-                    className="hover:text-gold-800"
+                    className="hover:text-gold-300"
                   >
                     {destination.name}
                   </Link>
@@ -100,7 +108,7 @@ export default async function TourPage({ params }: Params) {
                   <dt className="sr-only">Duration</dt>
                   <Clock
                     aria-hidden="true"
-                    className="mt-0.5 size-4 shrink-0 text-gold-700"
+                    className="mt-0.5 size-4 shrink-0 text-gold-400"
                   />
                   <dd>
                     {formatDuration(tour.durationNights, tour.durationDays)}
@@ -110,7 +118,7 @@ export default async function TourPage({ params }: Params) {
                   <dt className="sr-only">Route</dt>
                   <MapPin
                     aria-hidden="true"
-                    className="mt-0.5 size-4 shrink-0 text-gold-700"
+                    className="mt-0.5 size-4 shrink-0 text-gold-400"
                   />
                   <dd>{tour.routeSummary}</dd>
                 </div>
@@ -157,7 +165,7 @@ export default async function TourPage({ params }: Params) {
                   <li key={highlight} className="flex gap-3">
                     <Check
                       aria-hidden="true"
-                      className="mt-1 size-4 shrink-0 text-gold-700"
+                      className="mt-1 size-4 shrink-0 text-gold-400"
                     />
                     <span className="text-muted-foreground">{highlight}</span>
                   </li>
@@ -195,7 +203,7 @@ export default async function TourPage({ params }: Params) {
                     <li key={item} className="flex gap-3 text-sm">
                       <Minus
                         aria-hidden="true"
-                        className="mt-0.5 size-4 shrink-0 text-ink-400"
+                        className="mt-0.5 size-4 shrink-0 text-muted-foreground"
                       />
                       <span className="text-muted-foreground">{item}</span>
                     </li>
@@ -219,7 +227,7 @@ export default async function TourPage({ params }: Params) {
                   <li key={item} className="flex gap-3 text-sm">
                     <Info
                       aria-hidden="true"
-                      className="mt-0.5 size-4 shrink-0 text-gold-700"
+                      className="mt-0.5 size-4 shrink-0 text-gold-400"
                     />
                     <span className="text-muted-foreground">{item}</span>
                   </li>
@@ -240,7 +248,7 @@ export default async function TourPage({ params }: Params) {
       </section>
 
       {departures.length > 0 ? (
-        <section className="bg-sand-100 py-20">
+        <section className="bg-ink-900 py-20">
           <Container>
             <h2 className="text-h2">Departure dates</h2>
             <div className="mt-8 space-y-5">

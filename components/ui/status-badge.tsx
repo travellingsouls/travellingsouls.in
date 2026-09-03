@@ -10,8 +10,8 @@ const statusBadge = cva(
     variants: {
       status: {
         open: "border-emerald-700/25 bg-emerald-50 text-emerald-900",
-        filling_fast: "border-gold-700/30 bg-gold-100 text-gold-800",
-        sold_out: "border-ink-300/40 bg-sand-100 text-ink-600",
+        filling_fast: "border-gold-700/30 bg-gold-100 text-gold-300",
+        sold_out: "border-ink-300/40 bg-ink-900 text-ink-600",
         coming_soon: "border-ink-200 bg-transparent text-ink-500",
       },
     },

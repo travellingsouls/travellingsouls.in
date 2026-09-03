@@ -40,7 +40,7 @@ export function TourCard({
 
       <div className="flex flex-1 flex-col p-5">
         <div className="flex items-start justify-between gap-3">
-          <p className="text-overline uppercase text-gold-700">
+          <p className="text-overline uppercase text-gold-400">
             {formatDuration(tour.durationNights, tour.durationDays)}
           </p>
           {nextDeparture ? <StatusBadge status={nextDeparture.status} /> : null}

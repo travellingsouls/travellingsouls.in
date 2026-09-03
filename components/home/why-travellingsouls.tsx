@@ -65,7 +65,7 @@ export function WhyTravellingSouls() {
             <li key={title}>
               <Icon
                 aria-hidden="true"
-                className="size-6 text-gold-700"
+                className="size-6 text-gold-400"
                 strokeWidth={1.5}
               />
               <h3 className="mt-4 text-h3">{title}</h3>

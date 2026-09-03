@@ -35,7 +35,7 @@ export function Itinerary({ days }: { days: ItineraryDay[] }) {
             className="absolute -left-[5px] top-1.5 size-2.5 rounded-full bg-gold-600"
           />
 
-          <p className="text-overline uppercase text-gold-700">
+          <p className="text-overline uppercase text-gold-400">
             Day {day.day}
           </p>
           <h3 className="mt-2 text-h3">{day.title}</h3>

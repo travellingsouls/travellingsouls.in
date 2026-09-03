@@ -61,11 +61,16 @@ export const siteConfig = {
   description:
     "Curated group tours and customized journeys across North India and Goa, led personally by an experienced trip captain.",
 
+  /**
+   * Used exactly as supplied, black background included. The page ground is
+   * pure black so the square blends invisibly - which is why the site palette
+   * is dark rather than the logo being cut out.
+   */
   logo: {
-    src: "/logo/travellingsouls-logo.png",
+    src: "/logo/travellingsouls-logo.jpeg",
     alt: "TravellingSouls - where stories begin",
-    /** The gold compass mark alone, for tight spaces and the favicon. */
-    mark: "/logo/travellingsouls-mark.png",
+    width: 1024,
+    height: 1024,
   },
 
   business: {

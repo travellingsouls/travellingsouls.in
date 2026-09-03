@@ -53,7 +53,7 @@ export default function ContactPage() {
                   {phoneDisplay ? (
                     <li className="flex gap-3">
                       <Phone
-                        className="mt-0.5 size-4 shrink-0 text-gold-700"
+                        className="mt-0.5 size-4 shrink-0 text-gold-400"
                         aria-hidden="true"
                       />
                       <a
@@ -68,7 +68,7 @@ export default function ContactPage() {
                   {business.email ? (
                     <li className="flex gap-3">
                       <Mail
-                        className="mt-0.5 size-4 shrink-0 text-gold-700"
+                        className="mt-0.5 size-4 shrink-0 text-gold-400"
                         aria-hidden="true"
                       />
                       <a
@@ -82,7 +82,7 @@ export default function ContactPage() {
 
                   <li className="flex gap-3">
                     <MapPin
-                      className="mt-0.5 size-4 shrink-0 text-gold-700"
+                      className="mt-0.5 size-4 shrink-0 text-gold-400"
                       aria-hidden="true"
                     />
                     <address className="not-italic text-muted-foreground">
@@ -112,7 +112,7 @@ export default function ContactPage() {
                   href={business.googleBusinessProfile}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-sm text-gold-700 underline underline-offset-4"
+                  className="inline-block text-sm text-gold-400 underline underline-offset-4"
                 >
                   Find us on Google
                   <span className="sr-only"> (opens in a new tab)</span>

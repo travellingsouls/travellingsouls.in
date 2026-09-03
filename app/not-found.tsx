@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <section className="py-24 sm:py-32">
       <Container width="narrow">
-        <p className="text-overline uppercase text-gold-700">404</p>
+        <p className="text-overline uppercase text-gold-400">404</p>
         <h1 className="mt-3 text-h1">This page has moved on</h1>
         <p className="mt-5 text-lead text-muted-foreground">
           The page you were looking for is not here. It may have been renamed,

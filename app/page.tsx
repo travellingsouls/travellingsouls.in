@@ -74,7 +74,7 @@ export default async function HomePage() {
       ) : null}
 
       {destinations.length > 0 ? (
-        <section className="bg-sand-100 py-20 sm:py-24">
+        <section className="bg-ink-900 py-20 sm:py-24">
           <Container>
             <SectionHeading
               overline="Where we travel"

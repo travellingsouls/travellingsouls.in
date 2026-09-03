@@ -61,16 +61,16 @@ export function Footer() {
       <Container>
         <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            {/* The full lockup goes here rather than in the header: its
-                tagline is white artwork, which only reads on a dark ground. */}
+            {/* Logo as supplied. The black background matches the footer, so
+                the square is invisible and only the artwork reads. */}
             <Image
               src={siteConfig.logo.src}
               alt={siteConfig.logo.alt}
-              width={648}
-              height={498}
-              className="h-auto w-48"
+              width={siteConfig.logo.width}
+              height={siteConfig.logo.height}
+              className="-ml-4 h-auto w-56"
             />
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
               {siteConfig.description}
             </p>
 

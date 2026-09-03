@@ -44,7 +44,7 @@ export function DestinationCard({
       />
 
       <div className={cn("flex flex-1 flex-col p-5", isFeature && "sm:p-7")}>
-        <p className="text-overline uppercase text-gold-700">
+        <p className="text-overline uppercase text-gold-400">
           {destination.region}
         </p>
 
@@ -61,7 +61,7 @@ export function DestinationCard({
           {isFeature ? destination.summary : destination.tagline}
         </p>
 
-        <p className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-gold-700">
+        <p className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-gold-400">
           Explore
           <ArrowUpRight
             aria-hidden="true"
