@@ -14,9 +14,10 @@ import type { Tour } from "@/lib/types";
  * Structural facts (duration, route, start and end points) follow the example
  * in the project brief and are marked TODO(content) for confirmation.
  *
- * Images are the destination photographs, standing in until there are
- * photographs from actual departures. They are labelled as destination
- * imagery, not presented as pictures of this trip.
+ * Each tour has its OWN photograph, deliberately picking a different
+ * subject from its destination page - a monastery where the destination
+ * shows a road, and so on - so the same picture never appears twice on a
+ * page. They are pictures of the region, not of this specific departure.
  *
  * Nothing in this file may go to production unreviewed.
  */
@@ -38,11 +39,11 @@ export const toursMock: Tour[] = [
     priceFrom: null,
 
     heroImage: {
-      src: "/images/destinations/spiti.jpg",
-      alt: "The bare, high-altitude road through the Spiti valley below rock ridges",
+      src: "/images/tours/spiti-valley-expedition.jpg",
+      alt: "Key Monastery stepped up the hillside above the Spiti valley",
       width: 1920,
-      height: 1280,
-      credit: "Timothy Gonsalves / Wikimedia Commons (CC BY-SA 4.0)",
+      height: 1440,
+      credit: "Ksuryawanshi / Wikimedia Commons (CC BY-SA 4.0)",
     },
     images: [],
 
@@ -79,11 +80,11 @@ export const toursMock: Tour[] = [
     priceFrom: null,
 
     heroImage: {
-      src: "/images/destinations/ladakh.jpg",
-      alt: "A stream running down from bare mountains in Ladakh",
-      width: 1920,
-      height: 1440,
-      credit: "Ssandrathomas / Wikimedia Commons (CC BY-SA 4.0)",
+      src: "/images/tours/ladakh-circuit.jpg",
+      alt: "Diskit monastery standing above the Nubra valley in Ladakh",
+      width: 1752,
+      height: 1122,
+      credit: "Hynek Moravec / Wikimedia Commons (CC BY 2.5)",
     },
     images: [],
 
@@ -119,11 +120,11 @@ export const toursMock: Tour[] = [
     priceFrom: null,
 
     heroImage: {
-      src: "/images/destinations/uttarakhand.jpg",
-      alt: "Alpine meadow in flower below peaks in the Valley of Flowers, Uttarakhand",
+      src: "/images/tours/valley-of-flowers-trek.jpg",
+      alt: "The view from Hemkund Sahib, high above Ghangaria in the Garhwal Himalaya",
       width: 1920,
-      height: 1080,
-      credit: "Anshusk / Wikimedia Commons (CC BY-SA 4.0)",
+      height: 1440,
+      credit: "John Muir Fan 86 / Wikimedia Commons (CC BY-SA 4.0)",
     },
     images: [],
 
