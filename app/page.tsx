@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { CtaSection } from "@/components/cta-section";
 import { DestinationCard } from "@/components/destinations/destination-card";
 import { Hero } from "@/components/home/hero";
@@ -20,6 +21,12 @@ import { generalEnquiryMessage } from "@/lib/whatsapp";
  * hourly keeps a passed departure from lingering on the homepage.
  */
 export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  // The homepage is the one route with no path segment, so its canonical
+  // has to be declared explicitly rather than derived from a slug.
+  alternates: { canonical: "/" },
+};
 
 export default async function HomePage() {
   const [departures, tours, destinations] = await Promise.all([

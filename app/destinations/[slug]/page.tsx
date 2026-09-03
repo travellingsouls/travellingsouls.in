@@ -40,6 +40,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title: `${destination.name} Tours | TravellingSouls`,
       description: destination.summary,
       type: "website",
+      images: destination.heroImage ? [{ url: destination.heroImage.src, alt: destination.heroImage.alt }] : undefined,
     },
   };
 }

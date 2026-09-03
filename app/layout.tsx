@@ -37,7 +37,23 @@ export const metadata: Metadata = {
     template: "%s | TravellingSouls",
   },
   description:
-    "Curated group tours and customized journeys across North India, led by experienced trip captains.",
+    "Curated group tours and customized journeys across North India and Goa, led personally by an experienced trip captain.",
+
+  // Defaults for every route. Pages override title, description and image;
+  // siteName, locale and type stay the same throughout.
+  openGraph: {
+    type: "website",
+    siteName: "TravellingSouls",
+    locale: "en_IN",
+    url: siteConfig.url,
+    title: "TravellingSouls — Curated journeys across India",
+    description:
+      "Curated group tours and customized journeys across North India and Goa, led personally by an experienced trip captain.",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+
   // TODO(launch): remove when real content is live and travellingsouls.in is
   // connected. Until then the placeholder must not be indexed, and the
   // *.vercel.app host must never compete with the real domain in search.

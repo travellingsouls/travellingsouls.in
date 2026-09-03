@@ -41,6 +41,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title: `${tour.title} | TravellingSouls`,
       description: tour.shortDescription,
       type: "website",
+      images: tour.heroImage ? [{ url: tour.heroImage.src, alt: tour.heroImage.alt }] : undefined,
     },
   };
 }
