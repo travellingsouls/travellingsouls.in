@@ -26,7 +26,7 @@ export const primaryNav: NavItem[] = [
   { label: "Customized Tours", href: "/customized-tours", status: "planned" },
   { label: "About", href: "/about", status: "planned" },
   { label: "Gallery", href: "/gallery", status: "planned" },
-  { label: "Contact", href: "/contact", status: "planned" },
+  { label: "Contact", href: "/contact", status: "live" },
 ];
 
 export const footerExplore: NavItem[] = [
@@ -41,7 +41,7 @@ export const footerCompany: NavItem[] = [
   { label: "Trip Captain", href: "/trip-captain", status: "planned" },
   { label: "Gallery", href: "/gallery", status: "planned" },
   { label: "Reviews", href: "/reviews", status: "planned" },
-  { label: "Contact", href: "/contact", status: "planned" },
+  { label: "Contact", href: "/contact", status: "live" },
 ];
 
 export const footerLegal: NavItem[] = [

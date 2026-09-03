@@ -21,11 +21,11 @@ const REASONS = [
   {
     Icon: Route,
     title: "Real travel experience",
-    body: "We do not just sell destinations. Routes are planned by people who have driven them, and who know where the day actually ends.",
+    body: "Trips are not just sold, they are travelled. Routes are planned by someone who has driven them, and who knows where the day actually ends.",
   },
   {
     Icon: Compass,
-    title: "Experienced trip captains",
+    title: "An experienced trip captain",
     body: "Trips are led on the ground, not run from an office. Someone travels with the group and handles the day as it comes.",
   },
   {
@@ -36,7 +36,7 @@ const REASONS = [
   {
     Icon: Mountain,
     title: "North India specialists",
-    body: "The Himalayan states are what we know best - the roads, the seasons, and when a pass is genuinely open.",
+    body: "The Himalayan states are the ones known best here - the roads, the seasons, and when a pass is genuinely open. Goa covers the winter months.",
   },
   {
     Icon: MessageSquare,

@@ -110,4 +110,20 @@ export const destinationsMock: Destination[] = [
     featured: false,
     sortOrder: 6,
   },
+  {
+    id: "dest-goa",
+    slug: "goa",
+    name: "Goa",
+    region: "Goa",
+    tagline: "The winter counterpart to a Himalayan season",
+    summary:
+      "Beaches, Portuguese-era churches and river country on the Konkan coast. Goa runs on the opposite calendar to the mountains, which makes it the natural trip when the passes are shut.",
+    description:
+      "Goa splits roughly in two. The north around Baga, Calangute and Anjuna is busier and better known; the south around Palolem, Agonda and Cola is quieter and slower. Inland there is a different state altogether - the spice farms and forest of the Western Ghats, the Dudhsagar falls on the Karnataka border, and the churches and old houses of Old Goa and Fontainhas. Because it is warm when the Himalaya is closed, Goa is what fills the winter months for a domestic operator working mainly in the north.",
+    bestSeason:
+      "November to February for the driest, mildest weather. March to May is hot, and the monsoon from June to September closes most water activity.",
+    heroImage: null,
+    featured: true,
+    sortOrder: 7,
+  },
 ];

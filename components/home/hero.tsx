@@ -31,7 +31,7 @@ export function Hero() {
           <h1 className="mt-5 text-display">Travel. Explore. Feel.</h1>
 
           <p className="mt-6 max-w-xl text-lead text-muted-foreground">
-            Curated journeys across India, led by people who know the road.
+            Curated journeys across North India and Goa, led personally by someone who knows the road.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
